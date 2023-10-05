@@ -4,7 +4,7 @@ CFLAGS := -Wall -Wextra -Werror
 LDFLAGS := -Iinclude
 
 # Libraries
-LIBS := -lft_printf -lm 
+LIBS := -lft_printf
 
 # Directories
 SRC_DIR := src

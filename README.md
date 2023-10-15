@@ -74,6 +74,7 @@ View the detailed usage instructions and available options in the project docume
    * [sorting.c](./src/sorting_algorithm.c) `Sorting algorithm implementation`
    * [validation.c](./src/validation.c) `Input validation functions`
    * [push_swap.c](./src/push_swap.c) `Main program file`
+   * [utils.c](./src/utils.c) `Utility functions`
  * [Makefile](./Makefile) `Makefile for building the project`
 
 <!--

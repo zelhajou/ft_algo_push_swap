@@ -18,6 +18,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "libft.h"	   // Example: Include your local "libft" library header
+#include "ft_printf.h" // Example: Include your local "ft_printf" library header
+
 // Define the data structure
 typedef struct node
 {

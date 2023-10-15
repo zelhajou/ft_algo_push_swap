@@ -1,62 +1,54 @@
-# Compiler and compiler flags
-CC := gcc 
-CFLAGS := -Wall -Wextra -Werror
-LDFLAGS := -Iinclude
-
-# Libraries
-LIBS := -lft_printf
+# Compiler
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
 # Directories
-SRC_DIR := src
-OBJ_DIR := build
-BIN_DIR := bin
-INC_DIR := include
-LIB_DIR := lib
-UTILS_DIR := utils
-TEST_DIR := test
-
-# Source files
-SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
-OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+SRCDIR = src
+OBJDIR = obj
+INCDIR = include
+LIBFTDIR = lib/libft
+FT_PRINTFDIR = lib/ft_printf
 
 # Executable name
-EXECUTABLE := $(BIN_DIR)/push_swap
+NAME = push_swap
 
-# Test files
-TEST_SRC_FILES := $(wildcard $(TEST_DIR)/*.c)
-TEST_EXECUTABLES := $(patsubst $(TEST_DIR)/%.c, $(BIN_DIR)/%, $(TEST_SRC_FILES))
+# Source files
+SRC = $(wildcard $(SRCDIR)/*.c)
+OBJ = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
 
+# Libraries
+LIBFT = $(LIBFTDIR)/libft.a
+FT_PRINTF = $(FT_PRINTFDIR)/libftprintf.a
 
-# Targets and Phony Targets
-.PHONY: all clean fclean re
+# Includes
+INCLUDES = -I$(INCDIR) -I$(LIBFTDIR) -I$(FT_PRINTFDIR)
 
-# Default target
-all: $(EXECUTABLE)
+# Build rules
+all: $(NAME)
 
-test: $(TEST_EXECUTABLES)
+$(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^
 
-# Build executable
-$(EXECUTABLE): $(OBJ_FILES)
-	@mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-# Build object files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ -c $<
+$(LIBFT):
+	$(MAKE) -C $(LIBFTDIR)
 
-$(BIN_DIR)/%: $(TEST_DIR)/%.c $(OBJ_FILES)
-	@mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $< $(OBJ_FILES) $(LIBS)
+$(FT_PRINTF):
+	$(MAKE) -C $(FT_PRINTFDIR)
 
-# Clean generated files
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	$(RM) -r $(OBJDIR)
+	$(MAKE) -C $(LIBFTDIR) clean
+	$(MAKE) -C $(FT_PRINTFDIR) clean
 
-# Clean everything, including the executable
 fclean: clean
-	rm -f $(EXEC)
+	$(RM) $(NAME)
+	$(MAKE) -C $(LIBFTDIR) fclean
+	$(MAKE) -C $(FT_PRINTFDIR) fclean
 
-# Rebuild everything
 re: fclean all
 
+.PHONY: all clean fclean re

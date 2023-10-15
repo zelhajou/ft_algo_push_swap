@@ -11,23 +11,19 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#define PUSH_SWAP_H
+
+// Include header files
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 // Define the data structure
 typedef struct node
 {
 	int data;
-	struct 
-	
-}	node_t;
+	struct node *next;
 
-
-// Define the stack structure
-typedef struct Stack {
-    int data;
-    int top;
-} Stack;
-
-
+} node_t;
 
 #endif

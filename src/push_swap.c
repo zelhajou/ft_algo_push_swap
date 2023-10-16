@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
+	node_t *stack_a;
 	if (argc < 2)
-		return (1);
-	ft_printf("Helllo %s", argv[0]);
+		exit(1);
 }

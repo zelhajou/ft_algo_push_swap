@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:55:32 by zelhajou          #+#    #+#             */
-/*   Updated: 2022/11/19 20:42:54 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/18 08:39:53 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
-{	
+{
 	unsigned char	*s1;
 	unsigned char	*s2;
 

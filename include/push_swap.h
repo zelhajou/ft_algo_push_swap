@@ -6,27 +6,26 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:00:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/04 17:45:55 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:10:32 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
+# define PUSH_SWAP_H
 // Include header files
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-#include "libft.h"	   // Example: Include your local "libft" library header
-#include "ft_printf.h" // Example: Include your local "ft_printf" library header
+# include "libft.h"
+# include "ft_printf.h"
 
 // Define the data structure
 typedef struct node
 {
-	int data;
-	struct node *next;
+	int			data;
+	struct node	*next;
 
-} node_t;
+}	t_node;
 
 #endif

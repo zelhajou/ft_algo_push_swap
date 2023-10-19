@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:00:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/18 13:10:32 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:38:32 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,17 @@
 # include "ft_printf.h"
 
 // Define the data structure
-typedef struct node
+typedef struct Node
 {
 	int			data;
-	struct node	*next;
+	struct Node	*next;
 
 }	t_node;
+
+typedef struct Stack {
+    t_node* top;
+}	Stack;
+
+int parseArguments(int argc, char *argv[], Stack *stackA);
 
 #endif

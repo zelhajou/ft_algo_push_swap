@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:53:36 by zelhajou          #+#    #+#             */
-/*   Updated: 2022/11/20 23:28:03 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:53:24 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <fcntl.h>
-
+# include <limits.h>
 /* Part 1 - Libc functions */
 
 /* -----------------------------   <ctype.h>   ------------------------------ */
@@ -68,6 +68,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_error(int key);
 
 /* Bonus Part */
 typedef struct s_list

@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:00:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/21 18:51:46 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/22 18:11:28 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-t_stack	*parse_arguments(int argc, char *argv[]);
+void	parse_arguments(int argc, char *argv[], t_stack **stack_a);
 void	push(t_stack **stack, int value);
+bool	is_sorted(t_stack *stack);
+void	display_list(t_stack *head);
+void	free_stack(t_stack **stack);
 
 #endif

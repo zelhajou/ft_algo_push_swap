@@ -6,42 +6,45 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 21:11:09 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/21 18:54:46 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/22 20:52:41 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include "stack_operations.h"
 
 int	main(int argc, char **argv)
 {
-	// Check if the number of arguments is valid.
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_b = NULL;
 	if (argc < 2)
-    {
-        ft_putstr_fd("Error: No input.\n", 2);
-        return 1;
-    }
-	// Parse command line arguments and initialize stacks.
-	t_stack *stack_a = parse_arguments(argc, argv);
-
-    printf("Parsed and Validated Integers: ");
-    t_stack *current = stack_a;
-    while (current != NULL)
-    {
-
-        printf("%d ", current->value);
-        current = current->next;
-	
+		ft_error(1);
+	parse_arguments(argc, argv, &stack_a);
+	if (!is_sorted(stack_a) && stack_a)
+	{
+		printf("deja sorted\n");
+		free_stack(&stack_a);
+		exit(0);
 	}
-	printf("\n");
-    while (stack_a != NULL)
-    {
-        t_stack *temp = stack_a;
-        stack_a = stack_a->next;
-        free(temp);
-    }
-    // Call your sorting function (e.g., sort).
-    // Print the required operations to sort the stack.
-    // Cleanup and free memory.
-	return 0;
+
+	ft_printf("init stack\n");
+	display_list(stack_a);
+	// pb(&stack_a, &stack_b);
+	// pb(&stack_a, &stack_b);
+	// pb(&stack_a, &stack_b);
+	sb(&stack_a, &stack_b);
+	ft_printf("stack A\n");
+	display_list(stack_a);
+	display_list(stack_a);
+
+	ft_printf("stack B\n");
+	display_list(stack_b);
+	display_list(stack_b);
+
+
+	free_stack(&stack_b);
+	return (0);
+
 }

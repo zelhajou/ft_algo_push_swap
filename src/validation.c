@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 15:58:35 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/22 18:19:49 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:46:44 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ bool	is_sorted(t_stack *stack)
 
 	while (stack != NULL && stack->next != NULL)
 	{
-		if (stack->value < stack->next->value)
+		if (stack->value > stack->next->value)
 			return 1;
 		stack = stack->next;
 	}

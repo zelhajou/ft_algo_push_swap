@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 21:11:09 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/22 20:52:41 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/23 12:42:44 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,31 @@ int	main(int argc, char **argv)
 
 	ft_printf("init stack\n");
 	display_list(stack_a);
-	// pb(&stack_a, &stack_b);
-	// pb(&stack_a, &stack_b);
-	// pb(&stack_a, &stack_b);
-	sb(&stack_a, &stack_b);
+	
 	ft_printf("stack A\n");
+	ft_printf("--------------\n");
 	display_list(stack_a);
+
+	ft_printf("stack B after push all from A to B\n");
+	ft_printf("--------------\n");
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	display_list(stack_b);
+	
+
+
+	ft_printf("stack A after push all from B to A\n");
+	ft_printf("--------------\n");
+	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
 	display_list(stack_a);
-
-	ft_printf("stack B\n");
-	display_list(stack_b);
-	display_list(stack_b);
+	
+	
 
 
+	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
 

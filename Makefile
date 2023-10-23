@@ -1,53 +1,50 @@
-# Compiler
+# Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra
+INCLUDES = -I./include -I./lib/libft -I./lib/ft_printf
 
 # Directories
-SRCDIR = src
-OBJDIR = obj
-INCDIR = include
-LIBFTDIR = lib/libft
-FT_PRINTFDIR = lib/ft_printf
-
-# Executable name
-NAME = push_swap
+SRCDIR = ./src
+OBJDIR = ./bin
+LIBFTDIR = ./lib/libft
+PRINTFDIR = ./lib/ft_printf
 
 # Source files
-SRC = $(wildcard $(SRCDIR)/*.c)
-OBJ = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
+SRCS = $(wildcard $(SRCDIR)/*.c)
+SRCS += $(wildcard $(SRCDIR)/operations/*/*.c)
+OBJ = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
 # Libraries
 LIBFT = $(LIBFTDIR)/libft.a
-FT_PRINTF = $(FT_PRINTFDIR)/libftprintf.a
+PRINTF = $(PRINTFDIR)/libftprintf.a
 
-# Includes
-INCLUDES = -I$(INCDIR) -I$(LIBFTDIR) -I$(FT_PRINTFDIR)
+# Executable
+TARGET = push_swap
 
-# Build rules
-all: $(NAME)
+all: $(TARGET)
 
-$(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
+$(TARGET): $(OBJ) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFTDIR)
+	make -C $(LIBFTDIR)
 
-$(FT_PRINTF):
-	$(MAKE) -C $(FT_PRINTFDIR)
+$(PRINTF):
+	make -C $(PRINTFDIR)
 
 clean:
-	$(RM) -r $(OBJDIR)
-	$(MAKE) -C $(LIBFTDIR) clean
-	$(MAKE) -C $(FT_PRINTFDIR) clean
+	rm -rf $(OBJDIR)
+	make -C $(LIBFTDIR) clean
+	make -C $(PRINTFDIR) clean
 
 fclean: clean
-	$(RM) $(NAME)
-	$(MAKE) -C $(LIBFTDIR) fclean
-	$(MAKE) -C $(FT_PRINTFDIR) fclean
+	rm -f $(TARGET)
+	make -C $(LIBFTDIR) fclean
+	make -C $(PRINTFDIR) fclean
 
 re: fclean all
 

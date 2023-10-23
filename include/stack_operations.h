@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:49:52 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/22 19:58:11 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:09:33 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,25 @@
 
 # include "push_swap.h"
 
-void	sa(t_stack **stack_a);
-void	sb(t_stack **stack_b);
-void	ss(t_stack **stack_a, t_stack **stack_b);
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-void	ra(t_stack **stack_a);
-void	rb(t_stack **stack_b);
-void	rr(t_stack **stack_a, t_stack **stack_b);
-void	rra(t_stack **stack_a);
-void	rrb(t_stack **stack_b);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
+// Push
+void	ft_pa(t_stack **stack_a, t_stack **stack_b);
+void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+
+// Swap
+void	ft_sa(t_stack **stack_a);
+void	ft_sb(t_stack **stack_b);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+
+// Rotate
+void	ft_rotate(t_stack **stack);
+void	ft_ra(t_stack **stack_a);
+void	ft_rb(t_stack **stack_b);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+
+// Reverse
+void	ft_reverse_rotate(t_stack **stack);
+void	ft_rra(t_stack **stack_a);
+void	ft_rrb(t_stack **stack_b);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,13 +6,15 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:30:28 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/21 12:37:47 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:56:30 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Sorting algorithm
-// void sort(Stack* stackA, Stack* stackB) {
-//     // Implement your sorting algorithm here.
-// }
+/*
+** Sorting algorithm
+*/
+void sort(stack_t* stack_a, stack_t* stack_b) {
+
+}

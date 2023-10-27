@@ -15,6 +15,6 @@
 /*
 ** Sorting algorithm
 */
-void sort(stack_t* stack_a, stack_t* stack_b) {
+// void sort(t_stack* stack_a, t_stack* stack_b) {
 
-}
+// }

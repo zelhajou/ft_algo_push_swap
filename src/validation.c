@@ -80,7 +80,7 @@ void	parse_arguments(int argc, char *argv[], t_stack **stack_a)
 				{
 					value = ft_atoi(tokens[j]);
 					if (!has_duplicates(*stack_a, value))
-						push(*(&stack_a), value);
+						push(stack_a, value);
 					else
 						ft_error(1);
 				}

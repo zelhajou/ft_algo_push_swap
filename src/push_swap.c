@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		ft_error(1);
 	parse_arguments(argc, argv, &stack_a);
+	assign_indexes(&stack_a);
 	if (!is_sorted(stack_a) && stack_a)
 	{
 		printf("deja sorted\n");
@@ -35,23 +36,24 @@ int	main(int argc, char **argv)
 	
 	ft_printf("stack A\n");
 	ft_printf("--------------\n");
+	ft_sort(&stack_a, &stack_b);
 	display_list(stack_a);
 
-	ft_printf("stack B after push all from A to B\n");
-	ft_printf("--------------\n");
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	display_list(stack_b);
+	// ft_printf("stack B after push all from A to B\n");
+	// ft_printf("--------------\n");
+	// ft_pb(&stack_a, &stack_b);
+	// ft_pb(&stack_a, &stack_b);
+	// ft_pb(&stack_a, &stack_b);
+	// display_list(stack_b);
 	
 
 
-	ft_printf("stack A after push all from B to A\n");
-	ft_printf("--------------\n");
-	ft_pa(&stack_a, &stack_b);
-	ft_pa(&stack_a, &stack_b);
-	ft_pa(&stack_a, &stack_b);
-	display_list(stack_a);
+	// ft_printf("stack A after push all from B to A\n");
+	// ft_printf("--------------\n");
+	// ft_pa(&stack_a, &stack_b);
+	// ft_pa(&stack_a, &stack_b);
+	// ft_pa(&stack_a, &stack_b);
+	// display_list(stack_a);
 	
 	
 

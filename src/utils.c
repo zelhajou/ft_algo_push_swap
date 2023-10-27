@@ -46,7 +46,7 @@ void	display_list(t_stack *head)
 		ft_printf("LinkedList is empty");
 	while (temp != NULL)
 	{
-		ft_printf("%d\n", temp->value);
+		ft_printf("%d - index : %d\n", temp->value, temp->index);
 		temp = temp->next;
 	}
 	printf("\n");
@@ -62,4 +62,26 @@ void	free_stack(t_stack **stack_a)
 		*stack_a = (*stack_a)->next;
 		free(temp);
 	}
+}
+
+void assign_indexes(t_stack **stack_a)
+{
+    t_stack *current;
+    t_stack *tmp;
+    int index;
+
+    current = *stack_a;
+    while (current)
+    {
+        tmp = *stack_a;
+        index = 0;
+        while (tmp)
+        {
+            if (tmp->value < current->value)
+                index++;
+            tmp = tmp->next;
+        }
+        current->index = index;
+        current = current->next;
+    }
 }

@@ -35,7 +35,9 @@ void	push(t_stack **stack, int value);
 bool	is_sorted(t_stack *stack);
 void	display_list(t_stack *head);
 void	free_stack(t_stack **stack);
-void ft_sort(t_stack **stack_a, t_stack **stack_b);
-void assign_indexes(t_stack **stack_a);
 
+void	assign_indexes(t_stack **stack_a);
+int		stack_size(t_stack *stack);
+
+void	ft_sort(t_stack **stack_a, t_stack **stack_b);
 #endif

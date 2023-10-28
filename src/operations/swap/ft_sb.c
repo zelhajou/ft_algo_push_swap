@@ -21,5 +21,9 @@ void	ft_sb(t_stack **stack_b)
 	temp = (*stack_b)->value;
 	(*stack_b)->value = (*stack_b)->next->value;
 	(*stack_b)->next->value = temp;
+
+	temp = (*stack_b)->index;
+	(*stack_b)->index = (*stack_b)->next->index;
+	(*stack_b)->next->index = temp;
 	ft_printf("sb\n");
 }

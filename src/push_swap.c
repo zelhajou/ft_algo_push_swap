@@ -34,30 +34,16 @@ int	main(int argc, char **argv)
 	ft_printf("init stack\n");
 	display_list(stack_a);
 	
+
+
+	ft_sort(&stack_a, &stack_b);
 	ft_printf("stack A\n");
 	ft_printf("--------------\n");
-	ft_sort(&stack_a, &stack_b);
 	display_list(stack_a);
+	ft_printf("stack B\n");
+	ft_printf("--------------\n");
 
-	// ft_printf("stack B after push all from A to B\n");
-	// ft_printf("--------------\n");
-	// ft_pb(&stack_a, &stack_b);
-	// ft_pb(&stack_a, &stack_b);
-	// ft_pb(&stack_a, &stack_b);
-	// display_list(stack_b);
-	
-
-
-	// ft_printf("stack A after push all from B to A\n");
-	// ft_printf("--------------\n");
-	// ft_pa(&stack_a, &stack_b);
-	// ft_pa(&stack_a, &stack_b);
-	// ft_pa(&stack_a, &stack_b);
-	// display_list(stack_a);
-	
-	
-
-
+	display_list(stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

@@ -6,11 +6,11 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:38:29 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/23 10:41:54 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:16:41 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack_operations.h"
+#include "operations.h"
 
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {

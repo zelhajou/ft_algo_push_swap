@@ -6,12 +6,12 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 21:11:09 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/23 12:42:44 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/28 21:22:30 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stack_operations.h"
+#include "operations.h"
 
 int	main(int argc, char **argv)
 {
@@ -22,30 +22,23 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		ft_error(1);
-	parse_arguments(argc, argv, &stack_a);
-	assign_indexes(&stack_a);
-	if (!is_sorted(stack_a) && stack_a)
-	{
-		printf("deja sorted\n");
-		free_stack(&stack_a);
-		exit(0);
-	}
+	ft_parse_args(argc, argv, &stack_a);
+	ft_assign_indexes(&stack_a);
+
+
 
 	ft_printf("init stack\n");
-	display_list(stack_a);
+	ft_display_list(stack_a);
 	
-
-
 	ft_sort(&stack_a, &stack_b);
-	ft_printf("stack A\n");
-	ft_printf("--------------\n");
-	display_list(stack_a);
-	ft_printf("stack B\n");
-	ft_printf("--------------\n");
 
-	display_list(stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	ft_printf("stack A\n--------------\n");
+	ft_display_list(stack_a);
+	ft_printf("stack B\n--------------\n");
+	ft_display_list(stack_b);
+
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
 	return (0);
 
 }

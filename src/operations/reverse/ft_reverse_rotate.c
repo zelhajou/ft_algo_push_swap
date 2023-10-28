@@ -6,11 +6,11 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:02:21 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/23 12:31:14 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:16:28 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack_operations.h"
+#include "operations.h"
 
 void	ft_reverse_rotate(t_stack **stack)
 {

@@ -64,6 +64,17 @@ void	free_stack(t_stack **stack_a)
 	}
 }
 
+int stack_size(t_stack *stack)
+{
+    int size = 0;
+    while (stack)
+    {
+        size++;
+        stack = stack->next;
+    }
+    return size;
+}
+
 void assign_indexes(t_stack **stack_a)
 {
     t_stack *current;

@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I./include -I./lib/libft -I./lib/ft_printf
 
 # Directories

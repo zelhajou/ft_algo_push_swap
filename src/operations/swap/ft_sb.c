@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:42:30 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/28 18:17:20 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:30:56 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 
 void	ft_sb(t_stack **stack_b)
 {
-	int	temp;
-
-	if (*stack_b == NULL || (*stack_b)->next == NULL)
-		return ;
-	temp = (*stack_b)->value;
-	(*stack_b)->value = (*stack_b)->next->value;
-	(*stack_b)->next->value = temp;
-	temp = (*stack_b)->index;
-	(*stack_b)->index = (*stack_b)->next->index;
-	(*stack_b)->next->index = temp;
+	ft_swap(stack_b);
 	ft_printf("sb\n");
 }

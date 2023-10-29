@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:00:17 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/28 18:16:49 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:26:33 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_ra(t_stack **stack_a)
 {
 	ft_rotate(stack_a);
+	ft_printf("%s", "ra\n");
 }

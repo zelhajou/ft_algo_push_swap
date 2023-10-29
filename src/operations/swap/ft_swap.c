@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_args.c                                    :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 15:58:35 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 12:36:50 by zelhajou         ###   ########.fr       */
+/*   Created: 2023/10/29 10:29:03 by zelhajou          #+#    #+#             */
+/*   Updated: 2023/10/29 11:56:06 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "operations.h"
 
-void	ft_parse_args(int argc, char *argv[], t_stack **stack_a)
+void	ft_swap(t_stack **stack)
 {
-	int		i;
+	int	temp;
 
-	i = 0;
-	while (++i < argc)
-		ft_handle_token(argv[i], stack_a);
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	temp = (*stack)->value;
+	(*stack)->value = (*stack)->next->value;
+	(*stack)->next->value = temp;
+	temp = (*stack)->index;
+	(*stack)->index = (*stack)->next->index;
+	(*stack)->next->index = temp;
 }

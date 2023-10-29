@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:38:29 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/28 18:16:41 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:26:02 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_rra(stack_a);
-	ft_rrb(stack_b);
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
+	ft_printf("%s", "rrr\n");
 }

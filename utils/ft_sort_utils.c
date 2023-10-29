@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:08:22 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 12:46:49 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/29 14:11:50 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,21 @@ int	ft_find_index(t_stack *stack, int target)
 		stack = stack->next;
 	}
 	return (-1);
+}
+
+void	ft_shift_b_to_a(t_stack **stack_a, t_stack **stack_b)
+{
+	if (ft_find_index(*stack_b, (*stack_a)->index - 1) 
+		< ft_stack_size(*stack_b) / 2)
+	{
+		while ((*stack_b)->index != (*stack_a)->index - 1)
+			ft_rb(stack_b);
+		ft_pa(stack_a, stack_b);
+	}
+	else
+	{
+		while ((*stack_b)->index != (*stack_a)->index - 1)
+			ft_rrb(stack_b);
+		ft_pa(stack_a, stack_b);
+	}
 }

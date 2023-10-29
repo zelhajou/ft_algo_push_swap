@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 19:34:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/28 20:09:51 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/29 12:31:34 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 bool	ft_is_valid_int(const char *str);
 bool	ft_is_within_int_range(const char *str);
 bool	ft_has_duplicates(t_stack *stack, int value);
-bool	ft_is_sorted(t_stack *stack);
-
+void	ft_add_to_stack(char *token, t_stack **stack_a);
+void	ft_handle_token(char *arg, t_stack **stack_a);
 #endif

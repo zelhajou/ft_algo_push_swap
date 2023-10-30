@@ -27,7 +27,7 @@ bool	ft_is_valid_int(const char *str)
 	return (true);
 }
 
-bool	ft_is_within_int_range(const char *str)
+bool	ft_is_int_range(const char *str)
 {
 	int	value;
 
@@ -52,7 +52,7 @@ void	ft_add_to_stack(char *token, t_stack **stack_a)
 {
 	int	value;
 
-	if (ft_is_valid_int(token) && ft_is_within_int_range(token))
+	if (ft_is_valid_int(token) && ft_is_int_range(token))
 	{
 		value = ft_atoi(token);
 		if (!ft_has_duplicates(*stack_a, value))
@@ -68,6 +68,7 @@ void	ft_handle_token(char *arg, t_stack **stack_a)
 {
 	char	**tokens;
 	int		j;
+	int		i;
 
 	tokens = ft_split(arg, ' ');
 	if (tokens != NULL)
@@ -75,6 +76,8 @@ void	ft_handle_token(char *arg, t_stack **stack_a)
 		j = -1;
 		while (tokens[++j] != NULL)
 			ft_add_to_stack(tokens[j], stack_a);
-		free(tokens);
+		i = 0;
+		while (tokens[i])
+			free(tokens[i++]);
 	}
 }

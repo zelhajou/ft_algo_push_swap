@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 21:11:09 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 13:11:09 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:59:19 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 	ft_parse_args(argc, argv, &stack_a);
 	ft_assign_indexes(&stack_a);
 	ft_sort(&stack_a, &stack_b);
-	ft_display_list(stack_a);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);

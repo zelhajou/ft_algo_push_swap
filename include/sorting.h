@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:24:41 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 12:56:02 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:43:09 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
 			int pv1, int pv2);
 void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b);
 void	ft_move_element_to_a(t_stack **stack_a, t_stack **stack_b);
+int		bottom(t_stack *stack);
 
 #endif

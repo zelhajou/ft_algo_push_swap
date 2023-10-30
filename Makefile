@@ -12,7 +12,7 @@
 
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 INCLUDES = -I./include -I./lib/libft -I./lib/ft_printf
 
 # Directories
@@ -41,9 +41,10 @@ SRCS = \
 	$(SRCDIR)/operations/swap/ft_swap.c \
 	$(SRCDIR)/parsing/ft_parse_args.c \
 	$(SRCDIR)/sorting/ft_sort.c \
-	$(UTILSDIR)/ft_sort_utils.c \
+	$(UTILSDIR)/sorting/ft_sort_utils.c \
+	$(UTILSDIR)/sorting/ft_sort_algo.c \
 	$(UTILSDIR)/utils.c \
-	$(UTILSDIR)/ft_parse_args_utils.c
+	$(UTILSDIR)/parsing/ft_parse_args_utils.c
 
 # Object files
 OBJ = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

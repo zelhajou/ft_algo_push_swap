@@ -16,7 +16,7 @@
 # include "push_swap.h"
 
 bool	ft_is_valid_int(const char *str);
-bool	ft_is_within_int_range(const char *str);
+bool	ft_is_int_range(const char *str);
 bool	ft_has_duplicates(t_stack *stack, int value);
 void	ft_add_to_stack(char *token, t_stack **stack_a);
 void	ft_handle_token(char *arg, t_stack **stack_a);

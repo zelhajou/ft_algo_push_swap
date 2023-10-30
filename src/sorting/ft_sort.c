@@ -13,48 +13,36 @@
 #include "sorting.h"
 #include "operations.h"
 
-void	ft_shift_partition(t_stack **stack_a, t_stack **stack_b, 
-	int pv1, int pv2)
-{
-	while (ft_stack_size(*stack_b) <= pv1)
-	{
-		if ((*stack_a)->index <= pv1)
-			ft_pb(stack_a, stack_b);
-		else
-			ft_ra(stack_a);
-		if (*stack_b != NULL && (*stack_b)->index <= pv2)
-			ft_rb(stack_b);
-	}
-}
-
-void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b)
-{
-	int	pv1;
-	int	pv2;
-
-	pv1 = 0;
-	while (ft_stack_size(*stack_a) > 3)
-	{
-		pv2 = ft_stack_size(*stack_a) / 6 + pv1;
-		pv1 += ft_stack_size(*stack_a) / 3;
-		ft_shift_partition(stack_a, stack_b, pv1, pv2);
-	}
-}
-
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!ft_is_sorted(*stack_a) && *stack_a)
+	int	size;
+
+	size = ft_stack_size(*stack_a);
+	if (size == 2)
 	{
-		ft_free_stack(stack_a);
-		exit(0);
-	}
-	if (ft_stack_size(*stack_a) <= 3)
-	{
-		ft_sort_top_three(stack_a);
+		ft_sort_two(stack_a);
 		return ;
 	}
-	ft_divide_and_shift(stack_a, stack_b);
-	ft_sort_top_three(stack_a);
-	while (*stack_b)
-		ft_shift_b_to_a(stack_a, stack_b);
+	else if (size == 3)
+	{
+		ft_sort_three(stack_a);
+		return ;
+	}
+	else if (size == 4)
+	{
+		ft_sort_four(stack_a, stack_b);
+		return ;
+	}
+	else if (size == 5)
+	{
+		ft_sort_five(stack_a, stack_b);
+		return ;
+	}
+	else
+	{
+		ft_divide_and_shift(stack_a, stack_b);
+		ft_sort_three(stack_a);
+		while (*stack_b)
+			ft_move_element_to_a(stack_a, stack_b);
+	}
 }

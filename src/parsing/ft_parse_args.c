@@ -19,4 +19,5 @@ void	ft_parse_args(int argc, char *argv[], t_stack **stack_a)
 	i = 0;
 	while (++i < argc)
 		ft_handle_token(argv[i], stack_a);
+	ft_assign_indexes(stack_a);
 }

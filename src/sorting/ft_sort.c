@@ -13,6 +13,18 @@
 #include "sorting.h"
 #include "operations.h"
 
+void	handle_large_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_divide_and_shift(stack_a, stack_b);
+	ft_sort_three(stack_a);
+	while (*stack_b)
+	{
+		ft_move_element_to_a(stack_a, stack_b);
+		while (ft_tail_index(*stack_a) == (*stack_a)->index - 1)
+			ft_rra(stack_a);
+	}
+}
+
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
@@ -39,14 +51,5 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	}
 	else
-	{
-		ft_divide_and_shift(stack_a, stack_b);
-		ft_sort_three(stack_a);
-		while (*stack_b)
-		{
-			ft_move_element_to_a(stack_a, stack_b);
-			while (bottom(*stack_a) == (*stack_a)->index - 1)
-				ft_rra(stack_a);
-		}
-	}
+		handle_large_sort(stack_a, stack_b);
 }

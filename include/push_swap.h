@@ -33,6 +33,7 @@ typedef struct s_stack
 void	ft_push(t_stack **stack, int value);
 void	ft_assign_indexes(t_stack **stack_a);
 int		ft_stack_size(t_stack *stack);
+int		ft_tail_index(t_stack *stack);
 void	ft_free_stack(t_stack **stack);
 void	ft_parse_args(int argc, char *argv[], t_stack **stack_a);
 void	ft_sort(t_stack **stack_a, t_stack **stack_b);

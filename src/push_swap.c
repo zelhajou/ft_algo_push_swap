@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 #include "operations.h"
+#include "sorting.h"
 
 int	main(int argc, char **argv)
 {
@@ -23,8 +24,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	ft_parse_args(argc, argv, &stack_a);
-	ft_assign_indexes(&stack_a);
-	ft_sort(&stack_a, &stack_b);
+	if (!ft_is_sorted(stack_a))
+		ft_sort(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);

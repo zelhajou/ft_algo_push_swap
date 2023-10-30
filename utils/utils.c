@@ -80,6 +80,18 @@ int	ft_stack_size(t_stack *stack)
 	return (size);
 }
 
+int	ft_tail_index(t_stack *stack)
+{
+	if (!stack)
+		return (0);
+	while (stack->next)
+	{
+		stack = stack->next;
+	}
+	return (stack->index);
+}
+
+/*
 void	ft_display_list(t_stack *head)
 {
 	t_stack	*temp;
@@ -94,3 +106,4 @@ void	ft_display_list(t_stack *head)
 	}
 	printf("\n");
 }
+*/

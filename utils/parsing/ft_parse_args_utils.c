@@ -79,5 +79,6 @@ void	ft_handle_token(char *arg, t_stack **stack_a)
 		i = 0;
 		while (tokens[i])
 			free(tokens[i++]);
+		free(tokens);
 	}
 }

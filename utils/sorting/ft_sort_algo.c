@@ -27,32 +27,21 @@ int	ft_find_index(t_stack *stack, int target)
 	return (-1);
 }
 
-int	bottom(t_stack *stack)
-{
-	if (!stack)
-		return (0);
-	while (stack->next)
-	{
-		stack = stack->next;
-	}
-	return (stack->index);
-}
-
 void	ft_move_element_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int	bottom_a;
+	int	tail_a;
 
-	bottom_a = 0;
-	if (bottom(*stack_a) < (*stack_a)->index)
-		bottom_a = bottom(*stack_a);
-	if (ft_find_index(*stack_b, (*stack_a)->index - 1) < 
-		ft_stack_size(*stack_b) / 2)
+	tail_a = 0;
+	if (ft_tail_index(*stack_a) < (*stack_a)->index)
+		tail_a = ft_tail_index(*stack_a);
+	if (ft_find_index(*stack_b, (*stack_a)->index - 1)
+		< ft_stack_size(*stack_b) / 2)
 	{
 		while ((*stack_b)->index != (*stack_a)->index - 1)
 		{
-			if ((*stack_b)->index > bottom_a)
+			if ((*stack_b)->index > tail_a)
 			{
-				bottom_a = (*stack_b)->index;
+				tail_a = (*stack_b)->index;
 				ft_pa(stack_a, stack_b);
 				ft_ra(stack_a);
 			}
@@ -78,8 +67,8 @@ void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
 			ft_pb(stack_a, stack_b);
 		else
 			ft_ra(stack_a);
-		if (*stack_b != NULL && (*stack_b)->index <= 
-			pv1 + size / 2 && (*stack_b)->index > pv1)
+		if (*stack_b != NULL && (*stack_b)->index
+			<= pv1 + size / 2 && (*stack_b)->index > pv1)
 			ft_rb(stack_b);
 	}
 }
@@ -87,7 +76,6 @@ void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
 void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b)
 {
 	int	pv1;
-	int	pv2;
 	int	size;
 
 	pv1 = 0;
@@ -97,7 +85,6 @@ void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b)
 		if (!size)
 			size = ft_stack_size(*stack_a) - 3;
 		ft_partition_and_shift(stack_a, stack_b, pv1, size);
-		pv2 = size / 2 + pv1;
 		pv1 += size;
 	}
 }

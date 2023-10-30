@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	ft_parse_args(argc, argv, &stack_a);
 	ft_assign_indexes(&stack_a);
 	ft_sort(&stack_a, &stack_b);
+	ft_display_list(stack_a);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);

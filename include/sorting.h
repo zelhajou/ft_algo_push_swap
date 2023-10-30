@@ -27,5 +27,4 @@ void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
 			int pv1, int pv2);
 void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b);
 void	ft_move_element_to_a(t_stack **stack_a, t_stack **stack_b);
-
 #endif

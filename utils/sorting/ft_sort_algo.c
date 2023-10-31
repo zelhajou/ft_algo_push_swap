@@ -6,59 +6,52 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:49:13 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/30 18:05:44 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 01:30:15 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
+#include "sorting.h"
 
-int	ft_find_index(t_stack *stack, int target)
+void	ft_move_top_elements_to_a(t_stack **stack_a, t_stack **stack_b,
+		int last_idx_a)
 {
-	int	i;
-
-	i = 0;
-	while (stack != NULL)
+	while ((*stack_b)->index != (*stack_a)->index - 1)
 	{
-		if (stack->index == target)
-			return (i);
-		i++;
-		stack = stack->next;
+		if ((*stack_b)->index > last_idx_a)
+		{
+			last_idx_a = (*stack_b)->index;
+			ft_pa(stack_a, stack_b);
+			ft_ra(stack_a);
+		}
+		else
+			ft_rb(stack_b);
 	}
-	return (-1);
+	ft_pa(stack_a, stack_b);
+}
+
+void	ft_move_bottom_elements_to_a(t_stack **stack_a, t_stack **stack_b)
+{
+	while ((*stack_b)->index != (*stack_a)->index - 1)
+		ft_rrb(stack_b);
+	ft_pa(stack_a, stack_b);
 }
 
 void	ft_move_element_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int	tail_a;
+	int	last_idx_a;
 
-	tail_a = 0;
-	if (ft_tail_index(*stack_a) < (*stack_a)->index)
-		tail_a = ft_tail_index(*stack_a);
+	last_idx_a = 0;
+	if (ft_get_tail_index(*stack_a) < (*stack_a)->index)
+		last_idx_a = ft_get_tail_index(*stack_a);
 	if (ft_find_index(*stack_b, (*stack_a)->index - 1)
 		< ft_stack_size(*stack_b) / 2)
-	{
-		while ((*stack_b)->index != (*stack_a)->index - 1)
-		{
-			if ((*stack_b)->index > tail_a)
-			{
-				tail_a = (*stack_b)->index;
-				ft_pa(stack_a, stack_b);
-				ft_ra(stack_a);
-			}
-			else
-				ft_rb(stack_b);
-		}
-		ft_pa(stack_a, stack_b);
-	}
+		ft_move_top_elements_to_a(stack_a, stack_b, last_idx_a);
 	else
-	{
-		while ((*stack_b)->index != (*stack_a)->index - 1)
-			ft_rrb(stack_b);
-		ft_pa(stack_a, stack_b);
-	}
+		ft_move_bottom_elements_to_a(stack_a, stack_b);
 }
 
-void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
+void	ft_partition_and_move(t_stack **stack_a, t_stack **stack_b,
 	int pv1, int size)
 {
 	while (ft_stack_size(*stack_b) <= pv1 + size)
@@ -73,7 +66,7 @@ void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
 	}
 }
 
-void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b)
+void	ft_divide_and_move(t_stack **stack_a, t_stack **stack_b)
 {
 	int	pv1;
 	int	size;
@@ -84,7 +77,7 @@ void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b)
 		size = ft_stack_size(*stack_a) / 3;
 		if (!size)
 			size = ft_stack_size(*stack_a) - 3;
-		ft_partition_and_shift(stack_a, stack_b, pv1, size);
+		ft_partition_and_move(stack_a, stack_b, pv1, size);
 		pv1 += size;
 	}
 }

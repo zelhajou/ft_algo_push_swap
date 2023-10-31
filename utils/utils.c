@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:33:14 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 12:47:12 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 00:42:29 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	ft_stack_size(t_stack *stack)
 	return (size);
 }
 
-int	ft_tail_index(t_stack *stack)
+int	ft_get_tail_index(t_stack *stack)
 {
 	if (!stack)
 		return (0);

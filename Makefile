@@ -6,13 +6,13 @@
 #    By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 17:21:32 by zelhajou          #+#    #+#              #
-#    Updated: 2023/10/29 12:37:58 by zelhajou         ###   ########.fr        #
+#    Updated: 2023/10/30 23:33:24 by zelhajou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=undefined -g
+CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I./include -I./lib/libft -I./lib/ft_printf
 
 # Directories

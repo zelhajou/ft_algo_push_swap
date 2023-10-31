@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:24:41 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/30 17:43:09 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 01:29:28 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 int		ft_find_min(t_stack *stack);
 void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int value);
-void	ft_partition_and_shift(t_stack **stack_a, t_stack **stack_b,
+void	ft_partition_and_move(t_stack **stack_a, t_stack **stack_b,
 			int pv1, int pv2);
-void	ft_divide_and_shift(t_stack **stack_a, t_stack **stack_b);
+void	ft_divide_and_move(t_stack **stack_a, t_stack **stack_b);
 void	ft_move_element_to_a(t_stack **stack_a, t_stack **stack_b);
+void	ft_move_top_elements_to_a(t_stack **stack_a, t_stack **stack_b,
+			int last_idx_a);
+void	ft_move_bottom_elements_to_a(t_stack **stack_a, t_stack **stack_b);
+void	handle_sorting_cases(t_stack **stack, t_stack *first,
+			t_stack *second, t_stack *third);
 #endif

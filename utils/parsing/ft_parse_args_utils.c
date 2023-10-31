@@ -6,11 +6,28 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 20:12:14 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 12:45:01 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 14:23:10 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+
+bool	ft_is_whitespace(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\r' || c == '\v' || c == '\f');
+}
+
+bool	ft_str_is_whitespace(const char *str)
+{
+	while (*str)
+	{
+		if (!ft_is_whitespace(*str))
+			return (false);
+		str++;
+	}
+	return (true);
+}
 
 bool	ft_is_valid_int(const char *str)
 {
@@ -46,39 +63,4 @@ bool	ft_has_duplicates(t_stack *stack, int value)
 		stack = stack->next;
 	}
 	return (false);
-}
-
-void	ft_add_to_stack(char *token, t_stack **stack_a)
-{
-	int	value;
-
-	if (ft_is_valid_int(token) && ft_is_int_range(token))
-	{
-		value = ft_atoi(token);
-		if (!ft_has_duplicates(*stack_a, value))
-			ft_push(stack_a, value);
-		else
-			ft_error(1);
-	}
-	else
-		ft_error(1);
-}
-
-void	ft_handle_token(char *arg, t_stack **stack_a)
-{
-	char	**tokens;
-	int		j;
-	int		i;
-
-	tokens = ft_split(arg, ' ');
-	if (tokens != NULL)
-	{
-		j = -1;
-		while (tokens[++j] != NULL)
-			ft_add_to_stack(tokens[j], stack_a);
-		i = 0;
-		while (tokens[i])
-			free(tokens[i++]);
-		free(tokens);
-	}
 }

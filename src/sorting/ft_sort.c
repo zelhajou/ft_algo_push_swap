@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:30:28 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/31 01:24:27 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:25:19 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,6 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	else if (size == 3)
 	{
 		ft_sort_three(stack_a);
-		return ;
-	}
-	else if (size == 4)
-	{
-		ft_sort_four(stack_a, stack_b);
-		return ;
-	}
-	else if (size == 5)
-	{
-		ft_sort_five(stack_a, stack_b);
 		return ;
 	}
 	else

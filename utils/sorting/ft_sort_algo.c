@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:49:13 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/31 01:30:15 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:25:34 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	ft_move_element_to_a(t_stack **stack_a, t_stack **stack_b)
 void	ft_partition_and_move(t_stack **stack_a, t_stack **stack_b,
 	int pv1, int size)
 {
-	while (ft_stack_size(*stack_b) <= pv1 + size)
+	while (ft_stack_size(*stack_b) < pv1 + size)
 	{
-		if ((*stack_a)->index <= pv1 + size)
+		if ((*stack_a)->index < pv1 + size)
 			ft_pb(stack_a, stack_b);
 		else
 			ft_ra(stack_a);
@@ -75,7 +75,7 @@ void	ft_divide_and_move(t_stack **stack_a, t_stack **stack_b)
 	while (ft_stack_size(*stack_a) > 3)
 	{
 		size = ft_stack_size(*stack_a) / 3;
-		if (!size)
+		if (size < 10)
 			size = ft_stack_size(*stack_a) - 3;
 		ft_partition_and_move(stack_a, stack_b, pv1, size);
 		pv1 += size;

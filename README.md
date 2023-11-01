@@ -32,6 +32,15 @@ following operations at your disposal:
 - Provides detailed instructions on running the program and testing.
 - Offers a clear and well-structured codebase for easy understanding and modification.
 
+## My algorithm
+
+The algorithm is a variation of a divide-and-conquer sorting method designed specifically for two stacks. The approach combines concepts from selection sort, insertion sort, and merge sort.
+
+**Algorithm approach**: The algorithm takes a divide-and-conquer approach for stacks larger than three. It divides stack_a into smaller chunks and pushes these chunks to stack_b. It then sorts the remaining elements in stack_a and gradually pushes back elements from stack_b to stack_a in a sorted manner.
+
+**Stack structure**: The stack structure (t_stack) is assumed to have at least two members: value, which is the integer value of the element, and index, which is the initial position or index of the element in the unsorted stack_a. The stack is implemented as a singly linked list, given the presence of the next pointer
+
+
 ## Getting Started
 
 Follow these steps to get started with the Push Swap project:
@@ -39,7 +48,7 @@ Follow these steps to get started with the Push Swap project:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/push-swap.git
+git clone https://github.com/zelhajou/push_swap.git
 ```
 2. Compile the project:
 
@@ -77,14 +86,4 @@ View the detailed usage instructions and available options in the project docume
    * [utils.c](./src/utils.c) `Utility functions`
  * [Makefile](./Makefile) `Makefile for building the project`
 
-<!--
-## Contributing
-Contributions are welcome! If you'd like to contribute to the Push Swap project, please follow these guidelines:
 
-1. Fork the repository.
-2. Create a new branch: git checkout -b feature/your-feature-name.
-3. Make your changes and commit them: git commit -m 'Add some feature'.
-4. Push to your branch: git push origin feature/your-feature-name.
-Create a pull request, describing your changes and their purpose.
-
--->

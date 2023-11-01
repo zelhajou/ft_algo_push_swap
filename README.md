@@ -37,7 +37,7 @@ following operations at your disposal:
 - Provides detailed instructions on running the program and testing.
 - Offers a clear and well-structured codebase for easy understanding and modification.
 
-## My algorithm
+## The algorithm
 
 The algorithm is a variation of a divide-and-conquer sorting method designed specifically for two stacks. The approach combines concepts from selection sort, insertion sort, and merge sort.
 

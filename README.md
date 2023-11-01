@@ -2,9 +2,14 @@
 
 ## Overview
 
-The "push_swap" project at 42 is a programming challenge that involves sorting a stack of integers using a limited set of instructions. The goal is to develop an efficient algorithm that can transform an unsorted stack into a sorted one, using only a predefined set of operations like pushing and swapping elements between two stacks. It's a test of both algorithmic problem-solving and coding skills.
+The "push_swap" project at 42 is a programming challenge that involves sorting a stack of integers using a limited set of instructions. The goal is to develop an efficient algorithm that can transform an unsorted stack into a sorted one, using only a predefined set of operations like pushing and swapping elements between two stacks. It requires to choose the most optimized algorithm data sorting solution. It's a test of both algorithmic problem-solving and coding skills.
+
+## Objectives 
+The project aims to introduce developers to sorting algorithms and their complexities. It emphasizes the importance of understanding algorithmic complexity and the challenges of optimizing sorting for different configurations of integers.
 
 ## The rules
+
+Two stacks named 'a' and 'b' are provided. Stack 'a' contains random integers, while stack 'b' is empty. The goal is to sort the numbers in stack 'a' using specific operations like swap, push, rotate, etc
 
 - You have 2 stacks named `a` and `b`.
 - At the beginning:
@@ -40,6 +45,64 @@ The algorithm is a variation of a divide-and-conquer sorting method designed spe
 
 **Stack structure**: The stack structure (t_stack) is assumed to have at least two members: value, which is the integer value of the element, and index, which is the initial position or index of the element in the unsorted stack_a. The stack is implemented as a singly linked list, given the presence of the next pointer
 
+### Step 1: Determine Sorting Approach:
+
+1. Given a list of numbers in Stack A
+2. Determine the size of Stack A. The `ft_sort`` function first checks the size of the stack.
+3. The function then checks:
+
+- If the size is 2, it calls **`ft_sort_two`**.
+- If the size is 3, it calls **`ft_sort_three`**.
+- For sizes larger than 3, it calls **`handle_large_sort`** and continue to the next step..
+
+**Calculation**: Determine the size of stack_a.
+```c
+size = ft_stack_size(*stack_a);
+```
+
+**Purpose**: To understand which sorting method to use. Smaller sizes can use simple methods, while larger ones need a more intricate approach.
+
+### Step 2: Divide and Move to Stack B (Divide and Conquer:)
+
+- Based on the size of Stack A, choose a partitioning criterion. This criterion is often based on pivots or ranges of numbers. I partitioning into roughly thirds.
+- Push a fraction of numbers from Stack A to Stack B based on the chosen partitioning criterion. The goal is to leave only a small chunk (say, 3 numbers) in Stack A.
+
+
+
+#### Partitioning:
+
+**Calculation**: Compute size-based partitions (or pivots) of `stack_a`.
+	- `size = ft_stack_size(*stack_a) / 3` gives an indication of how many elements to move from `stack_a` to `stack_b` in each pass. The exact pivot strategy isn't given in the code you provided, but based on size, we can infer a rough division into thirds.
+
+- *Purpose:* By creating size-based partitions, the algorithm can manage a controlled number of elements, ensuring that only a small, easily sortable number of elements remain in stack_a.
+
+In **`handle_large_sort`**, the function **`ft_divide_and_move`** is called.
+
+```c
+ft_divide_and_move(stack_a, stack_b);
+```
+This function will repeatedly partition **`stack_a`** and push some elements to **`stack_b`** until **`stack_a`** has only 3 elements left.
+
+#### Moving Elements:
+
+**Calculation**: Within the `ft_partition_and_move` function, the algorithm determines whether the current element should be moved to `stack_b` based on its index and the pivot value. If an element's index is less than the pivot value, it's a candidate to be moved to `stack_b`.
+
+**Purpose**: To distribute elements between the stacks based on their relative values, preparing for the merging phase.
+
+### Step 3: Sort the three elements
+
+With only a few numbers left in Stack A, use simple comparison-based methods to sort them. This is done with ft_sort_three in the provided code.
+
+```c
+ft_sort_three(stack_a);
+```
+
+`Calculation`: For a chunk of three numbers in stack_a, the algorithm calculates their relative order using comparison operations in the `handle_sorting_cases` function.
+
+`Purpose`: This is a straightforward sorting of a small number of elements, ensuring that they're in the correct order before the merging phase
+
+### Step 4: Move back elements from Stack B
+Gradually move numbers back from Stack B to Stack A, ensuring they're inserted in the correct order.
 
 ## Getting Started
 

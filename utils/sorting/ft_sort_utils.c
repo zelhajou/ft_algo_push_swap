@@ -6,20 +6,12 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:08:22 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/31 01:29:52 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/10/31 23:54:25 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 #include "sorting.h"
-
-void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int value)
-{
-	while (*stack_a && (*stack_a)->value != value)
-		ft_ra(stack_a);
-	if (*stack_a)
-		ft_pb(stack_a, stack_b);
-}
 
 void	ft_sort_two(t_stack **stack)
 {

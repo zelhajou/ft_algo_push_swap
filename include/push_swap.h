@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:00:04 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/31 01:08:17 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:10:08 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 }	t_stack;
 
-void	ft_push(t_stack **stack, int value);
+void	ft_pushlst(t_stack **stack, int value);
 void	ft_assign_indexes(t_stack **stack_a);
 int		ft_stack_size(t_stack *stack);
 int		ft_get_tail_index(t_stack *stack);

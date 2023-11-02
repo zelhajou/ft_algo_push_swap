@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:33:14 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/31 00:42:29 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:29:26 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ void	ft_display_list(t_stack *head)
 		ft_printf("%d - index : %d\n", temp->value, temp->index);
 		temp = temp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
 */

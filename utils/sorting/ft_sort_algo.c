@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:49:13 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/31 12:25:34 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/02 03:43:29 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_partition_and_move(t_stack **stack_a, t_stack **stack_b,
 		else
 			ft_ra(stack_a);
 		if (*stack_b != NULL && (*stack_b)->index
-			<= pv1 + size / 2 && (*stack_b)->index > pv1)
+			<= pv1 + size / 2 && (*stack_b)->index >= pv1)
 			ft_rb(stack_b);
 	}
 }

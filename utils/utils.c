@@ -6,13 +6,13 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:33:14 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/11/02 16:29:26 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:09:58 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push(t_stack **stack, int value)
+void	ft_pushlst(t_stack **stack, int value)
 {
 	t_stack	*new_node;
 	t_stack	*temp;

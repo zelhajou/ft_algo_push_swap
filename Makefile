@@ -6,7 +6,7 @@
 #    By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 17:21:32 by zelhajou          #+#    #+#              #
-#    Updated: 2023/11/02 19:39:21 by zelhajou         ###   ########.fr        #
+#    Updated: 2023/11/02 22:46:22 by zelhajou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRCS = \
 	$(UTILSDIR)/utils.c \
 	$(UTILSDIR)/parsing/ft_parse_args_utils.c
 
+# Source files Bonus
 CHECKER_SRCS = \
     $(TESTDIR)/checker.c \
     $(TESTDIR)/get_next_line.c \

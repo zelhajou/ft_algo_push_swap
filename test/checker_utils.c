@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:28:22 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/11/02 22:38:19 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/02 23:38:15 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	execute_reverse_instructions(char *instruction,
 		ft_reverse_rotate(stack_a);
 		ft_reverse_rotate(stack_b);
 	}
+	else
+		ft_error(1);
 }
 
 void	execute_instruction(char *instruction,

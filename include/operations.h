@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 12:47:33 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/10/29 12:48:56 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:36:37 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "push_swap.h"
 
 // Push
+void	ft_push(t_stack **from_stack, t_stack **to_stack);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
 

@@ -64,7 +64,7 @@ size = ft_stack_size(*stack_a);
 
 ### Step 2: Divide and Move to Stack B (Divide and Conquer:)
 
-- Based on the size of Stack A, choose a partitioning criterion. This criterion is often based on pivots or ranges of numbers. I partitioning into roughly thirds.
+- Based on the size of Stack A, choose a partitioning criterion. This criterion is often based on pivots or ranges of numbers. and partitioned into third
 - Push a fraction of numbers from Stack A to Stack B based on the chosen partitioning criterion. The goal is to leave only a small chunk (say, 3 numbers) in Stack A.
 
 
@@ -72,9 +72,13 @@ size = ft_stack_size(*stack_a);
 #### Partitioning:
 
 **Calculation**: Compute size-based partitions (or pivots) of `stack_a`.
-	- `size = ft_stack_size(*stack_a) / 3` gives an indication of how many elements to move from `stack_a` to `stack_b` in each pass. The exact pivot strategy isn't given in the code you provided, but based on size, we can infer a rough division into thirds.
 
-- *Purpose:* By creating size-based partitions, the algorithm can manage a controlled number of elements, ensuring that only a small, easily sortable number of elements remain in stack_a.
+```c
+size = ft_stack_size(*stack_a) / 3
+```
+gives an indication of how many elements to move from `stack_a` to `stack_b` in each pass.
+
+**Purpose:** By creating size-based partitions, the algorithm can manage a controlled number of elements, ensuring that only a small, easily sortable number of elements remain in stack_a.
 
 In **`handle_large_sort`**, the function **`ft_divide_and_move`** is called.
 
@@ -91,15 +95,15 @@ This function will repeatedly partition **`stack_a`** and push some elements to 
 
 ### Step 3: Sort the three elements
 
-With only a few numbers left in Stack A, use simple comparison-based methods to sort them. This is done with ft_sort_three in the provided code.
+With only a few numbers left in Stack A, use simple comparison-based methods to sort them. This is done with `ft_sort_three` in the provided code.
 
 ```c
 ft_sort_three(stack_a);
 ```
 
-`Calculation`: For a chunk of three numbers in stack_a, the algorithm calculates their relative order using comparison operations in the `handle_sorting_cases` function.
+**Calculation**: For a chunk of three numbers in stack_a, the algorithm calculates their relative order using comparison operations in the `handle_sorting_cases` function.
 
-`Purpose`: This is a straightforward sorting of a small number of elements, ensuring that they're in the correct order before the merging phase
+**Purpose**: This is a straightforward sorting of a small number of elements, ensuring that they're in the correct order before the merging phase
 
 ### Step 4: Move back elements from Stack B
 Gradually move numbers back from Stack B to Stack A, ensuring they're inserted in the correct order.

@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:28:43 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/11/02 19:34:25 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/03 01:46:43 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include "operations.h"
 # include "parsing.h"
 
-void	execute_swap_instructions(char *instruction,
+int		execute_swap_instructions(char *instruction,
 			t_stack **stack_a, t_stack **stack_b);
-void	execute_push_instructions(char *instruction,
+int		execute_push_instructions(char *instruction,
 			t_stack **stack_a, t_stack **stack_b);
-void	execute_rotate_instructions(char *instruction,
+int		execute_rotate_instructions(char *instruction,
 			t_stack **stack_a, t_stack **stack_b);
-void	execute_reverse_instructions(char *instruction,
+int		execute_reverse_instructions(char *instruction,
 			t_stack **stack_a, t_stack **stack_b);
 void	execute_instruction(char *instruction,
 			t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 #    By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 17:21:32 by zelhajou          #+#    #+#              #
-#    Updated: 2023/11/02 22:46:22 by zelhajou         ###   ########.fr        #
+#    Updated: 2023/11/03 16:09:23 by zelhajou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INCLUDES = -I./include -I./lib/libft -I./lib/ft_printf
 SRCDIR = ./src
 UTILSDIR = ./utils
 OBJDIR = ./bin
-TESTDIR = ./test
+TESTDIR = ./checker
 LIBFTDIR = ./lib/libft
 PRINTFDIR = ./lib/ft_printf
 

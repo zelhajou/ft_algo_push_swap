@@ -6,7 +6,7 @@
 /*   By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:21:15 by zelhajou          #+#    #+#             */
-/*   Updated: 2023/11/02 22:42:33 by zelhajou         ###   ########.fr       */
+/*   Updated: 2023/11/03 01:21:38 by zelhajou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		exit(0);
 	ft_parse_args(argc, argv, &stack_a);
-	if (ft_is_sorted(stack_a))
-		return (0);
 	instruction = get_next_line(0);
 	while (instruction != NULL)
 	{

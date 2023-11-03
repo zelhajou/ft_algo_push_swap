@@ -6,12 +6,12 @@
 #    By: zelhajou <zelhajou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 17:21:32 by zelhajou          #+#    #+#              #
-#    Updated: 2023/11/03 16:28:14 by zelhajou         ###   ########.fr        #
+#    Updated: 2023/11/03 17:16:29 by zelhajou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler and flags
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I./include -I./lib/libft -I./lib/ft_printf
 

@@ -30,14 +30,8 @@ following operations at your disposal:
    - `rrb` (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
    - `rrr` : `rra` and `rrb` at the same time
 
-## Features
 
-- Sorts a stack of integers using push and swap operations.
-- Implements an optimized sorting algorithm.
-- Provides detailed instructions on running the program and testing.
-- Offers a clear and well-structured codebase for easy understanding and modification.
-
-## The algorithm
+## My algorithm
 
 The algorithm is a variation of a divide-and-conquer sorting method designed specifically for two stacks. The approach combines concepts from selection sort, insertion sort, and merge sort.
 
@@ -138,6 +132,7 @@ make
 Replace `3` `2` `1` with your own input numbers for testing.
 View the detailed usage instructions and available options in the project documentation.
 
+<!--
 ## Folder structure
  * [lib](./lib) `external libraries`
    * [ft_printf](./lib/ft_printf)
@@ -152,5 +147,7 @@ View the detailed usage instructions and available options in the project docume
    * [push_swap.c](./src/push_swap.c) `Main program file`
    * [utils.c](./src/utils.c) `Utility functions`
  * [Makefile](./Makefile) `Makefile for building the project`
+
+-->
 
 

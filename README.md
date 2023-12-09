@@ -153,4 +153,28 @@ View the detailed usage instructions and available options in the project docume
 
 -->
 
+## Resources
+
+### General
+**Algorithmic problem-solving steps:**
+1. Understanding the problem  
+2. Deciding on computational means, exact versus approximate solving, data structures and algorithm design technique   
+3. Design an algorithm  
+4. Prove accuracy  
+5. Analyze the algorithm  
+6. Code the algorithm 
+
+**Computational thinking:** A set of techniques for solving complex problems
+1. **Decomposition:** Break a problem into parts
+2. **Pattern recognition:**
+   - Interpreting patterns and models
+   - **(Looking for similarities and trends)**
+3. **Abstraction:**
+   - Focusing on what is important and ignoring what is unnecessary 
+   - Organizing data logically
+4. **Algorithm design:** step by step instructions for solving the problem 
+   - Designing and implementing algorithms
+5. **Debugging:** Fixing errors within the algorithm
+6. **Generalization:** Extending a solution for a particular problem 
+to other kinds of problems 
 

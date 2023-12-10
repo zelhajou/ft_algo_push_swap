@@ -1,13 +1,6 @@
 
-```
- _  _  ____                    _                                 
-| || ||___ \   _ __  _   _ ___| |__      _____      ____ _ _ __  
-| || |_ __) | | '_ \| | | / __| '_ \    / __\ \ /\ / / _` | '_ \ 
-|__   _/ __/  | |_) | |_| \__ \ | | |   \__ \\ V  V / (_| | |_) |
-   |_||_____| | .__/ \__,_|___/_| |_|___|___/ \_/\_/ \__,_| .__/ 
-              |_|                  |_____|                |_|    
-By: zelhajou
-```
+![ascii-text-art (4)](https://github.com/zelhajou/push_swap/assets/39954629/a9c348c6-69e3-42a0-b4ca-e3c969af9cdd)
+
 ## Overview
 
 The "push_swap" project at 42 is a programming challenge that involves sorting a stack of integers using a limited set of instructions. The goal is to develop an efficient algorithm that can transform an unsorted stack into a sorted one, using only a predefined set of operations like pushing and swapping elements between two stacks. It requires to choose the most optimized algorithm data sorting solution. It's a test of both algorithmic problem-solving and coding skills.

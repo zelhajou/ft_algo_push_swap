@@ -1,5 +1,4 @@
-
-![ascii-text-art (4)](https://github.com/zelhajou/push_swap/assets/39954629/a9c348c6-69e3-42a0-b4ca-e3c969af9cdd)
+![ascii-text-art](https://github.com/zelhajou/push_swap/assets/39954629/94599474-61f0-47a0-89f5-3d900fc6b38e)
 
 ## Overview
 

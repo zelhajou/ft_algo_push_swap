@@ -4,7 +4,7 @@
 *.o
 *.a
 .DS_Store
-push_swap
+
 push_swap_tester/
 push_swap_tester2/
 push_swap_tester3/

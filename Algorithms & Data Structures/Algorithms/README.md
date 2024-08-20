@@ -1,9 +1,9 @@
 
-Algorithm is a set of instructions independent of the hardware or programming languages designed to solve particular problem its kind of like a recipe of how to build a program and a lot of work is put into developing algorithms to get to the same final result like sorting a random set of numbers into order but some algorithm are much more efficient than others. this is studied in algorithmic complexity ([[Big-O notation]])
+Algorithm is a set of instructions independent of the hardware or programming languages designed to solve particular problem its kind of like a recipe of how to build a program and a lot of work is put into developing algorithms to get to the same final result like sorting a random set of numbers into order but some algorithm are much more efficient than others. this is studied in algorithmic complexity
 
-```
+
 Algorithms are a fundamental concept in computer science and programming. They are step-by-step procedures or sets of rules for solving a specific problem or performing a particular task. Algorithms play a crucial role in various aspects of computer science, from sorting data to searching for information, and they are the foundation of computer programs and software
-```
+
 
 
 # **Key Concepts in Algorithms:**
